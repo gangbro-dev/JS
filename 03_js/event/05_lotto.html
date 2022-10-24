@@ -17,6 +17,7 @@
       font-size: xx-large;
       font-weight: bold;
       color: white;
+      background-color: crimson;
     }
     .ball-container {
       display: flex;
@@ -30,7 +31,25 @@
 
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
   <script>
+    const btn = document.querySelector('#lotto-btn')
+    btn.addEventListener('click', function (event) {
 
+
+      const ballContainer = document.createElement('div')
+      ballContainer.classList.add('ball-container')
+
+      const numbers = _.sampleSize(_.range(1, 46), 6)
+      console.log(numbers)
+
+      numbers.forEach ((number) => {
+        const ball = document.createElement('div')
+        ball.innerText = number
+        ball.classList.add('ball')
+        ballContainer.appendChild(ball)
+      })
+      const resultDiv = document.querySelector('#result')
+      resultDiv.appendChild(ballContainer)
+    })
   </script>
 </body>
 </html>

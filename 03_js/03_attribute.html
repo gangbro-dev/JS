@@ -19,6 +19,18 @@
   <div></div>
 
   <script>
+    // 태그 속성 변환
+    const aTag = document.createElement('a')
+    const divTag = document.querySelector('div')
+
+    divTag.appendChild(aTag)
+
+    aTag.innerText = '구글'
+    aTag.setAttribute('href', 'https://google.com')
+
+    const h1Tag = document.querySelector('h1')
+
+    h1Tag.classList.toggle('blue')
     
   </script>
 </body>

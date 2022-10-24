@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1></h1>
+  <button id="btn">클릭</button>
+  <input type="text">
+
+  <script>
+    const btn = document.querySelector('#btn')
+    const h1Tag = document.querySelector('h1')
+    btn.addEventListener('click', function (event) {
+      h1Tag.classList.toggle('blue')
+    })
+    h1Tag.innerText = 'hi'
+    const textInput = document.querySelector('input')
+    const pTag = document.querySelector('p')
+
+    textInput.addEventListener('input', function () {
+      // console.log(event)
+      console.log(event.target)
+      pTag.innerText = event.target.value
+    })
+  </script>
+</body>
+</html>

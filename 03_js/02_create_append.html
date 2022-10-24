@@ -10,6 +10,12 @@
   <div></div>
   
   <script>
+    //태그 생성
+    const h1Tag = document.createElement('h1')
+    h1Tag.innerText = 'DOM 조작'
+    const bodyTag = document.querySelector('body')
+
+    bodyTag.appendChild(h1Tag)
     
   </script>
 </body>
