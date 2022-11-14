@@ -2,7 +2,7 @@
   <div id="app">
     <nav>
       <router-link :to="{ name: 'ArticleView' }">Articles</router-link> | 
-      <!-- <router-link :to="{ name: 'SignUpView' }">SignUpPage</router-link> |  -->
+      <router-link :to="{ name: 'SignUpView' }">SignUpPage</router-link> | 
       <!-- <router-link :to="{ name: 'LogInView' }">LogInPage</router-link> -->
     </nav>
     <router-view/>
@@ -10,6 +10,7 @@
 </template>
 
 <style>
+/* adfc498cfb93458cba1e6a8237ddf5d9234a022e */
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

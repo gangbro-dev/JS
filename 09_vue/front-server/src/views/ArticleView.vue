@@ -1,6 +1,8 @@
 <template>
   <div>
     <h1>Article Page</h1>
+    <router-link :to="{name: 'CreateView'}">[Create]</router-link>
+    <br>
     <button @click="getArticles">목록 "줘"</button>
     <ArticleList/>
     <hr>

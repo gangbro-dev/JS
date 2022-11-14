@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex)
 
@@ -20,12 +21,16 @@ export default new Vuex.Store({
         content: '내용2'
       },
     ],
+    token: null,
   },
   getters: {
   },
   mutations: {
     GET_ARTICLES(state, data) {
       state.articles = data
+    },
+    SIGN_UP(state, token) {
+      state.token = token
     }
   },
   actions: {
@@ -41,7 +46,25 @@ export default new Vuex.Store({
       .catch((error) => {
         console.log(error)
       })
-    }
+    },
+    signUp(context, payload) {
+      axios({
+        method: 'post',
+        url: `${API_URL}accounts/signup/`,
+        data: {
+          username: payload.username,
+          password1: payload.password1,
+          password2: payload.password2,
+        },
+      })
+      .then((res) => {
+        console.log(res)
+        context.commit('SIGN_UP', res.data.key)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    },
   },
   modules: {
   }
